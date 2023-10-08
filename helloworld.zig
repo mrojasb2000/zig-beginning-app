@@ -2,5 +2,5 @@ const std = @import("std");
 
 pub fn main() void {
     std.debug.print("Hello, world!\n", .{});
-    std.debug.print("Hello, {d}\n", .{2023});
+    std.debug.print("Hello, {}\n", .{2023});
 }
