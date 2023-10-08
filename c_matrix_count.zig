@@ -5,4 +5,5 @@ pub fn main() void {
     var x: usize = 3;
     const count = nums[1..x];
     std.debug.print("{any}\n", .{count});
+    std.debug.print("{}\n", .{@TypeOf(count)});
 }
