@@ -8,6 +8,12 @@ pub const User = struct {
 
     pub const SUPER_POWER = 9_000;
 
+    pub fn init(name: []const u8, power: u64) User {
+        return User{
+            .name = name,
+            .power = power,
+        };
+    }
     pub fn diagnose(user: User) void {
         if (user.power >= SUPER_POWER) {
             std.debug.print("it's over {d}!!!\n", .{SUPER_POWER});
