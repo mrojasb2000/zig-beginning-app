@@ -10,8 +10,14 @@ pub fn main() !void {
         .name = "Vegeta",
     };
 
+    const krillin = .{
+        .power = 400,
+        .name = "Krillin",
+    };
+
     std.debug.print("{s}'s power is {d}\n", .{ goku.name, goku.power });
     std.debug.print("{s}'s power is {d}\n", .{ vegeta.name, vegeta.power });
+    std.debug.print("{s}'s power is {d}\n", .{ krillin.name, krillin.power });
     std.debug.print("Max power: {d}\n", .{user.MAX_POWER});
 
     // call diagnose on user
