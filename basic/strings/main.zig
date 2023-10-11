@@ -10,5 +10,6 @@ pub fn main() !void {
     const a = [3:false]bool{ false, true, false };
     std.debug.print("Length: {d}\n", .{a.len});
     std.debug.print("Data Type: {any}\n", .{@TypeOf(a)});
+    // This line is more advanced, and is not going to get explained!
     std.debug.print("{any}\n", .{std.mem.asBytes(&a).*});
 }
