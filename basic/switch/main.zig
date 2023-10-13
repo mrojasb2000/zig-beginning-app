@@ -15,3 +15,18 @@ fn anniversaryName(years_married: u16) []const u8 {
         else => return "no more gifts for you",
     }
 }
+
+fn arrivalTimeDesc(minutes: u16, is_late: bool) []const u8 {
+    switch (minutes) {
+        0 => return "arrived",
+        1, 2 => return "soon",
+        3...5 => return "no more than 5 minutes",
+        else => {
+            if (!is_late) {
+                return "sorry, it'll be a while";
+            }
+            // todo, something is very wrong
+            return "never";
+        },
+    }
+}
