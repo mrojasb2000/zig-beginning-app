@@ -9,8 +9,17 @@ pub fn main() !void {
     std.debug.print("Array contain 3 => {any}\n", .{contains(&data, 3)});
     std.debug.print("Array1 equals Array2 => {any}\n", .{eql(u32, &data, &more_data)});
 
-    for (0..10) |i| {
-        std.debug.print("{d}\n", .{i});
+    //for (0..10) |i| {
+    //    std.debug.print("{d}\n", .{i});
+    //}
+
+    std.debug.print("Index: {any}\n", .{indexOf(u32, &data, 2)});
+
+    outer: for (1..10) |i| {
+        for (i..10) |j| {
+            if (i + j > i + i + j + j) continue :outer;
+            std.debug.print("{d} + {d} >= {d} * {d}\n", .{ i + i, j + j, i, j });
+        }
     }
 }
 
@@ -32,4 +41,11 @@ pub fn eql(comptime T: type, a: []const T, b: []const T) bool {
         if (a_elem != b_elem) return false;
     }
     return true;
+}
+
+fn indexOf(comptime T: type, haystack: []const T, needle: T) ?usize {
+    for (haystack, 0..) |value, i| {
+        if (needle == value) return i;
+    }
+    return null;
 }
