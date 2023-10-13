@@ -8,6 +8,10 @@ pub fn main() !void {
     std.debug.print("Array contain 5 => {any}\n", .{contains(&data, 5)});
     std.debug.print("Array contain 3 => {any}\n", .{contains(&data, 3)});
     std.debug.print("Array1 equals Array2 => {any}\n", .{eql(u32, &data, &more_data)});
+
+    for (0..10) |i| {
+        std.debug.print("{d}\n", .{i});
+    }
 }
 
 // contains: check an array contains a value
