@@ -7,6 +7,7 @@ pub fn main() !void {
     };
 
     // this line has been added
+    // user => &user
     levelUp(&user);
     std.debug.print("User {d} has power of {d}\n", .{ user.id, user.power });
     std.debug.print("{*}\n{*}\n{*}\n", .{ &user, &user.id, &user.power });
@@ -15,6 +16,7 @@ pub fn main() !void {
     std.debug.print("{any}\n", .{@TypeOf(user_p)});
 }
 
+// User -> *User => pointer
 fn levelUp(user: *User) void {
     var u = user;
     u.power += 1;
