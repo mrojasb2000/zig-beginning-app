@@ -18,8 +18,7 @@ pub fn main() !void {
 
 // User -> *User => pointer
 fn levelUp(user: *User) void {
-    var u = user;
-    u.power += 1;
+    user.power += 1;
 }
 
 pub const User = struct {
