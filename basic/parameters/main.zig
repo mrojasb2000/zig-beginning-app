@@ -5,6 +5,7 @@ pub fn main() !void {
         .id = 1,
         .power = 100,
     };
+    std.debug.print("{*}\n", .{&user});
     std.debug.print("Power level {d} before callback\n", .{user.power});
     user.levelUp();
     std.debug.print("Power level {d} after callback\n", .{user.power});
